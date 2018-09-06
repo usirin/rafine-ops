@@ -10,6 +10,8 @@ imagePullPolicy: IfNotPresent
 nameOverride: ""
 fullnameOverride: ""
 
+dbConnectionName: "rafine-co:europe-west2:rafine"
+
 service:
   type: ClusterIP
   port: 3000
