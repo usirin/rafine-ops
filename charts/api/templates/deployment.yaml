@@ -25,10 +25,7 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
             - name: DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: rafine-api-db
-                  key: DB_HOST
+              value: 127.0.0.1:5432
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
