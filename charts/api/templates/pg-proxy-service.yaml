@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "api.fullname" . }}-pg-proxy
+  labels:
+    app: {{ include "api.name" . }}-pg-proxy
+    chart: {{ include "api.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ include "api.name" . }}
+    release: {{ .Release.Name }}
+
