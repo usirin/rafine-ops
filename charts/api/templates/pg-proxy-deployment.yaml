@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "api.fullname" . }}-pg-proxy
   labels:
-    app: {{ include "api.name" . }}
+    app: {{ include "api.name" . }}-pg-proxy
     chart: {{ include "api.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -11,13 +11,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ include "api.name" . }}
+      app: {{ include "api.name" . }}-pg-proxy
       release: {{ .Release.Name }}
 spec:
   template:
     metadata:
       labels:
-        app: {{ include "api.name" . }}
+        app: {{ include "api.name" . }}-pg-proxy
         release: {{ .Release.Name }}
     spec:
       containers:
