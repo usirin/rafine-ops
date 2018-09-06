@@ -23,6 +23,27 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
+          env:
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: rafine-api-db
+                  key: DB_HOST
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rafine-api-db
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rafine-api-db
+                  key: DB_PASSWORD
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: rafine-api-db
+                  key: DB_NAME
           ports:
             - name: http
               containerPort: 80
