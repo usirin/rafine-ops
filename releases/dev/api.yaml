@@ -1,0 +1,17 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: api-dev
+  namespace: dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:dev-*
+spec:
+  chartGitPath: api
+  releaseName: api-dev
+  values:
+    image: gcr.io/rafine-co/rafine-api:dev-123f56a2877563efb07162f996a80454ca915913
+    replicaCount: 1
+    ingress:
+      enabled: false
