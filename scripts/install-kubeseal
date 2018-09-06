@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "downloading client"
+wget https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.7.0/kubeseal-darwin-amd64
+
+echo "moving it to PATH, be ready to enter password"
+sudo install -m 755 kubeseal-darwin-amd64 /usr/local/bin/kubeseal
