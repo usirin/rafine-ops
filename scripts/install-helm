@@ -1,0 +1,21 @@
+#!/bin/sh
+echo "creating serviceaccount"
+kubectl --namespace kube-system \
+  create serviceaccount \
+  tiller
+
+echo "creating clusterrolebinding:cluster-admin-$(whoami)"
+kubectl create clusterrolebinding "cluster-admin-$(whoami)" \
+  --clusterrole=cluster-admin \
+  --user="$(gcloud config get-value core/account)"
+
+echo "creating clusterrolebinding:tiller-cluster-rule"
+kubectl create clusterrolebinding tiller-cluster-rule \
+  --clusterrole=cluster-admin \
+  --serviceaccount=kube-system:tiller
+
+echo "deploying tiller"
+helm init \
+  --skip-refresh \
+  --upgrade \
+  --service-account tiller
