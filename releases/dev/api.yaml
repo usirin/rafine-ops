@@ -11,7 +11,7 @@ spec:
   chartGitPath: api
   releaseName: api-dev
   values:
-    image: gcr.io/rafine-co/rafine-api:dev-123f56a2877563efb07162f996a80454ca915913
+    image: gcr.io/rafine-co/rafine-api:dev-903abcd45aac7d50172d1f624182551ec7625745
     replicaCount: 1
     ingress:
       enabled: false
