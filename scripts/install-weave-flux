@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "adding weaveworks helm repo"
+helm repo add weaveworks https://weaveworks.github.io/flux
+
+echo "installing weave flux & helm operator"
+helm install --name flux \
+  --set helmOperator.create=true \
+  --set git.url=git@github.com:usirin/rafine-ops.git \
+  --set helmOperator.git.chartsPath=charts \
+  --namespace flux \
+  weaveworks/flux
+
