@@ -13,7 +13,6 @@ spec:
     matchLabels:
       app: {{ include "api.name" . }}-pg-proxy
       release: {{ .Release.Name }}
-spec:
   template:
     metadata:
       labels:
