@@ -20,6 +20,7 @@ spec:
         app: {{ include "api.name" . }}
         release: {{ .Release.Name }}
     spec:
+      containers:
         - name: cloudsql-proxy
           image: gcr.io/cloudsql-docker/gce-proxy:1.11
           command: ["/cloud_sql_proxy",
