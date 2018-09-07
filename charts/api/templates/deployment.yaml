@@ -29,7 +29,7 @@ spec:
             - name: NODE_ENV
               value: {{ .Values.nodeEnv }}
             - name: DB_HOST
-              value: gcloud-sqlproxy
+              value: gcloud-sqlproxy-gcloud-sqlproxy
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
