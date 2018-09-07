@@ -23,6 +23,8 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
+          command: {{ .Values.imageCommand }}
+          args: {{ .Values.imageArgs }}
           env:
             - name: DB_HOST
               value: {{ include "api.fullname" . }}-pg-proxy
