@@ -9,6 +9,8 @@ imagePullPolicy: IfNotPresent
 imageCommand: ["npm"]
 imageArgs: ["start"]
 
+nodeEnv: development
+
 nameOverride: ""
 fullnameOverride: ""
 

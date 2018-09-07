@@ -26,6 +26,8 @@ spec:
           command: {{ .Values.imageCommand }}
           args: {{ .Values.imageArgs }}
           env:
+            - name: NODE_ENV
+              value: {{ .Values.nodeEnv }}
             - name: DB_HOST
               value: {{ include "api.fullname" . }}-pg-proxy
             - name: DB_USER
