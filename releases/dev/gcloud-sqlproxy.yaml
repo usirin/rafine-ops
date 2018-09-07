@@ -20,3 +20,4 @@ spec:
         - instance: rafine-dev
           project: rafine-co
           region: europe-west2
+          port: 5432
