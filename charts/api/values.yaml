@@ -10,6 +10,7 @@ imageCommand: ["npm"]
 imageArgs: ["start"]
 
 nodeEnv: development
+dbHost: 0.0.0.0
 
 nameOverride: ""
 fullnameOverride: ""
