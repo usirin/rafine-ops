@@ -1,0 +1,23 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: gcloud-sqlproxy
+  namespace: dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:dev-*
+spec:
+  chartGitPath: gcloud-sqlproxy
+  releaseName: gcloud-sqlproxy-dev
+  values:
+    image: b.gcr.io/cloudsql-docker/gce-proxy
+    imageTag: "1.11"
+    existingSecret: cloudsql-instance-credentials
+    existingSecretKey: credentials.json
+    cloudsql:
+      instances:
+        - instance: rafine-dev
+          project: rafine-co
+          region: europe-west2
+          port: 5432
