@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: { { include "web.fullname" . } }
+  name: {{ include "web.fullname" . }}
   labels:
-    app: { { include "web.name" . } }
-    chart: { { include "web.chart" . } }
-    release: { { .Release.Name } }
-    heritage: { { .Release.Service } }
+    app: {{ include "web.name" . }}
+    chart: {{ include "web.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
-  type: { { .Values.service.type } }
+  type: {{ .Values.service.type }}
   ports:
-    - port: { { .Values.service.port } }
+    - port: {{ .Values.service.port }}
       targetPort: 3000
       protocol: TCP
       name: http
   selector:
-    app: { { include "web.name" . } }
-    release: { { .Release.Name } }
+    app: {{ include "web.name" . }}
+    release: {{ .Release.Name }}
