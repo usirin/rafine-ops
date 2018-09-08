@@ -1,0 +1,19 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: api-rc
+  namespace: rc
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:rc-*
+spec:
+  chartGitPath: api
+  releaseName: api-rc
+  values:
+    image: gcr.io/rafine-co/rafine-api:rc-903abcd45aac7d50172d1f624182551ec7625745
+    replicaCount: 1
+    dbHost: gcloud-sqlproxy-rc-gcloud-sqlproxy
+    ingress:
+      enabled: false
+
