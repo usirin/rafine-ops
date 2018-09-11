@@ -1,0 +1,32 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: elasticsearch
+  namespace: dev
+spec:
+  chartGitPath: elasticsearch
+  releaseName: elasticsearch-dev
+  master:
+    name: master
+    exposeHttp: false
+    replicas: 3
+    heapSize: "512m"
+    persistence:
+      enabled: true
+      accessMode: ReadWriteOnce
+      name: data
+      size: "4Gi"
+      # storageClass: "ssd"
+    antiAffinity: "soft"
+    resources:
+      limits:
+        cpu: "1"
+        # memory: "1024Mi"
+      requests:
+        cpu: "25m"
+        memory: "512Mi"
+    priorityClassName: ""
+    podDisruptionBudget:
+      enabled: false
+      minAvailable: 2  # Same as `cluster.env.MINIMUM_MASTER_NODES`
