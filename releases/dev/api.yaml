@@ -11,7 +11,7 @@ spec:
   chartGitPath: api
   releaseName: api-dev
   values:
-    image: gcr.io/rafine-co/rafine-api:dev-f4fa3f09e4b2e55866ea6d3af497b3e45d58569c
+    image: gcr.io/rafine-co/rafine-api:dev-a01e27bfb38422d0e6cdf74c9762a42975a8cfde
     replicaCount: 1
     dbHost: gcloud-sqlproxy-dev-gcloud-sqlproxy
     ingress:
