@@ -11,7 +11,7 @@ spec:
   chartGitPath: web
   releaseName: web-dev
   values:
-    image: gcr.io/rafine-co/rafine-web:dev-0393662ecb08023cad7701206c48541fc2792800
+    image: gcr.io/rafine-co/rafine-web:dev-7a9436326f62d7ed15fae44a3bab989f619c4591
     replicaCount: 1
     apiEndpoint: http://api-dev:3000
     ingress:
