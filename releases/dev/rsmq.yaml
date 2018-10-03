@@ -1,0 +1,15 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: rsmq-dev
+  namespace: dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:dev-*
+spec:
+  chartGitPath: redis
+  releaseName: rsmq-dev
+  values:
+    usePassword: false
+
