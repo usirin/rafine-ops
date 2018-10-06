@@ -14,5 +14,6 @@ spec:
     image: gcr.io/rafine-co/rafine-api:dev-3d13fecfe9c49b61ccd9995aa970cc1b63332f25
     replicaCount: 1
     dbHost: gcloud-sqlproxy-dev-gcloud-sqlproxy
+    rsmqHost: rsmq-dev-redis-master
     ingress:
       enabled: false

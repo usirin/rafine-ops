@@ -28,6 +28,8 @@ spec:
           env:
             - name: NODE_ENV
               value: {{ .Values.nodeEnv }}
+            - name: RSMQ_HOST
+              value: {{ .Values.rsmqHost }}
             - name: DB_HOST
               value: {{ .Values.dbHost }}
             - name: DB_USER
