@@ -12,6 +12,8 @@ imageArgs: ["start"]
 nodeEnv: development
 apiEndpoint: http://api:3000
 
+healthcheckEndpoint: /healthcheck
+
 nameOverride: ""
 fullnameOverride: ""
 

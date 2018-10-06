@@ -36,11 +36,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /giris-yap
+              path: {{ .Values.healthcheckEndpoint }}
               port: 3000
           readinessProbe:
             httpGet:
-              path: /giris-yap
+              path: {{ .Values.healthcheckEndpoint }}
               port: 3000
           resources:
 {{ toYaml .Values.resources | indent 12 }}
