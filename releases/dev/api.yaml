@@ -15,5 +15,6 @@ spec:
     replicaCount: 1
     dbHost: gcloud-sqlproxy-dev-gcloud-sqlproxy
     rsmqHost: rsmq-dev-redis-master
+    jwtSecret: aRvRRzRm7GSFtMTl6PxmQs1/vzGE0+Ji
     ingress:
       enabled: false
