@@ -28,6 +28,8 @@ spec:
           env:
             - name: NODE_ENV
               value: {{ .Values.nodeEnv }}
+            - name: JWT_SECRET
+              value: {{ .Values.jwtSecret }}
             - name: RSMQ_HOST
               value: {{ .Values.rsmqHost }}
             - name: DB_HOST

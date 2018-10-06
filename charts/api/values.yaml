@@ -11,6 +11,7 @@ imageArgs: ["start"]
 
 nodeEnv: development
 dbHost: 0.0.0.0
+jwtSecret: sofuckingsecret
 
 nameOverride: ""
 fullnameOverride: ""
